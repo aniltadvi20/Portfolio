@@ -19,17 +19,16 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here
     console.log("Form Submitted", formData);
-    // Reset form after submission
+
     setFormData({
       name: "",
       email: "",
@@ -47,7 +46,7 @@ const Contact = () => {
     {
       icon: <FaGithub />,
       url: "https://github.com/aniltadvi20",
-      color: "text-gray-500",
+      color: "text-gray-400",
     },
     {
       icon: <FaTwitter />,
@@ -59,56 +58,62 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-200 py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page Header */}
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#33FF33]">
-            Get in Touch
+          <h1 className="text-4xl md:text-5xl font-bold text-[#33FF33] mb-4">
+            Contact
           </h1>
-          <p className="text-base md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Interested in cybersecurity collaboration or professional
-            opportunities?
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            For professional collaboration, security research discussion,
+            or responsible disclosure.
           </p>
         </motion.div>
 
-        {/* Contact Container */}
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
+
+          {/* LEFT — CONTACT INFO */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-[#0A192F] rounded-xl p-8 h-fit"
           >
-            <h2 className="text-2xl font-bold text-green-400 mb-6">
+            <h2 className="text-2xl font-bold text-[#33FF33] mb-6">
               Contact Approach
             </h2>
 
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <FaShieldAlt className="text-green-500 text-2xl" />
+
+              <div className="flex items-start space-x-4">
+                <FaShieldAlt className="text-green-500 text-2xl mt-1" />
                 <div>
                   <p className="text-gray-400">Professional Communication</p>
                   <p className="text-gray-200">
-                    Preferred contact through professional networks
+                    Preferred contact through verified professional channels.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <FaEnvelope className="text-green-500 text-2xl" />
+              <div className="flex items-start space-x-4">
+                <FaEnvelope className="text-green-500 text-2xl mt-1" />
                 <div>
-                  <p className="text-gray-400">Communication Strategy</p>
+                  <p className="text-gray-400">Secure Contact</p>
                   <p className="text-gray-200">
-                    Secure communication channels preferred
+                    For responsible disclosure or collaboration:
+                  </p>
+                  <p className="text-[#33FF33] mt-1 font-medium">
+                    contact@aniltadvi.com
                   </p>
                 </div>
               </div>
+
             </div>
 
-            {/* Social Links */}
+            {/* Social */}
             <div className="mt-8 flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -116,10 +121,7 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`
-                    text-3xl ${social.color} 
-                    hover:scale-110 transition-transform
-                  `}
+                  className={`text-3xl ${social.color} hover:scale-110 transition-transform`}
                 >
                   {social.icon}
                 </a>
@@ -127,9 +129,9 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* RIGHT — FORM */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
           >
             <form
@@ -137,91 +139,64 @@ const Contact = () => {
               className="bg-[#0A192F] rounded-xl p-8 space-y-6"
             >
               <div>
-                <label htmlFor="name" className="block text-gray-400 mb-2">
-                  Full Name
-                </label>
+                <label className="block text-gray-400 mb-2">Full Name</label>
                 <input
-                  type="text"
-                  id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#112240] text-gray-200 rounded-lg px-4 py-3 
-        border border-[#233554] 
-        focus:outline-none focus:ring-2 focus:ring-[#33FF33] 
-        hover:border-[#33FF33] 
-        transition-all duration-300"
+                  className="w-full bg-[#112240] rounded-lg px-4 py-3 border border-[#233554]
+                  focus:outline-none focus:ring-2 focus:ring-[#33FF33]"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-400 mb-2">
+                <label className="block text-gray-400 mb-2">
                   Professional Email
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#112240] text-gray-200 rounded-lg px-4 py-3 
-        border border-[#233554] 
-        focus:outline-none focus:ring-2 focus:ring-[#33FF33] 
-        hover:border-[#33FF33] 
-        transition-all duration-300"
+                  className="w-full bg-[#112240] rounded-lg px-4 py-3 border border-[#233554]
+                  focus:outline-none focus:ring-2 focus:ring-[#33FF33]"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-gray-400 mb-2">
-                  Subject
-                </label>
+                <label className="block text-gray-400 mb-2">Subject</label>
                 <input
-                  type="text"
-                  id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#112240] text-gray-200 rounded-lg px-4 py-3 
-        border border-[#233554] 
-        focus:outline-none focus:ring-2 focus:ring-[#33FF33] 
-        hover:border-[#33FF33] 
-        transition-all duration-300"
+                  className="w-full bg-[#112240] rounded-lg px-4 py-3 border border-[#233554]
+                  focus:outline-none focus:ring-2 focus:ring-[#33FF33]"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-400 mb-2">
-                  Your Message
-                </label>
+                <label className="block text-gray-400 mb-2">Message</label>
                 <textarea
-                  id="message"
                   name="message"
+                  rows="4"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
-                  className="w-full bg-[#112240] text-gray-200 rounded-lg px-4 py-3 
-        border border-[#233554] 
-        focus:outline-none focus:ring-2 focus:ring-[#33FF33] 
-        hover:border-[#33FF33] 
-        transition-all duration-300"
+                  className="w-full bg-[#112240] rounded-lg px-4 py-3 border border-[#233554]
+                  focus:outline-none focus:ring-2 focus:ring-[#33FF33]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#33FF33] text-black py-3 rounded-lg 
-      hover:bg-[#33FF33]/90 
-      transition-colors 
-      flex items-center justify-center space-x-2 
-      font-bold"
+                className="w-full bg-[#33FF33] text-black py-3 rounded-lg font-bold
+                flex items-center justify-center gap-2 hover:bg-[#33FF33]/90"
               >
                 <FaPaperPlane />
-                <span>Send Message</span>
+                Send Message
               </button>
             </form>
           </motion.div>
