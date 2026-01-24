@@ -51,7 +51,7 @@ const Contact = () => {
     },
     {
       icon: <FaTwitter />,
-      url: "https://x.com/Nick980076",
+      url: "https://x.com/AnilTadviSec",
       color: "text-sky-500",
     },
   ];
