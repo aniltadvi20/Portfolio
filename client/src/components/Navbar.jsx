@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHome,
-  FaUserShield,
   FaCode,
   FaLaptopCode,
   FaCertificate,
+  FaUser,
   FaEnvelope,
   FaBars,
   FaTimes,
@@ -21,11 +21,6 @@ const Navbar = () => {
       path: "/",
       label: "Home",
       icon: <FaHome className="w-5 h-5" />,
-    },
-    {
-      path: "/about",
-      label: "About",
-      icon: <FaUserShield className="w-5 h-5" />,
     },
     {
       path: "/projects",
@@ -43,6 +38,11 @@ const Navbar = () => {
       icon: <FaCertificate className="w-5 h-5" />,
     },
     {
+      path: "/about",
+      label: "About",
+      icon: <FaUser className="w-5 h-5" />,
+    },
+    {
       path: "/contact",
       label: "Contact",
       icon: <FaEnvelope className="w-5 h-5" />,
@@ -52,26 +52,35 @@ const Navbar = () => {
   const mobileMenuVariants = {
     closed: {
       x: "100%",
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
     open: {
       x: 0,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
   };
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-[#0A192F] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-bold text-[#33FF33] hover:text-[#8892B0] transition-colors"
-          >
-            <img src={Logo} alt="Logo" className="h-12 w-auto" />
+          <Link to="/" className="flex items-center">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-12 w-auto hover:opacity-90 transition"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -119,7 +128,7 @@ const Navbar = () => {
               onClick={toggleMenu}
             />
 
-            {/* Slide Menu */}
+            {/* Drawer */}
             <motion.div
               variants={mobileMenuVariants}
               initial="closed"
@@ -127,6 +136,7 @@ const Navbar = () => {
               exit="closed"
               className="fixed top-0 right-0 w-64 h-full bg-[#112240] shadow-lg z-50"
             >
+              {/* Close button */}
               <div className="absolute top-4 right-4">
                 <button
                   onClick={toggleMenu}
@@ -136,6 +146,7 @@ const Navbar = () => {
                 </button>
               </div>
 
+              {/* Links */}
               <div className="px-4 pt-20 space-y-4">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -144,15 +155,7 @@ const Navbar = () => {
                     animate={{
                       opacity: 1,
                       x: 0,
-                      transition: {
-                        delay: index * 0.1,
-                        duration: 0.3,
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      x: 20,
-                      transition: { duration: 0.2 },
+                      transition: { delay: index * 0.08 },
                     }}
                   >
                     <Link
