@@ -20,29 +20,30 @@ const HeroSection = () => {
     },
     {
       icon: <FaGithub className="w-6 h-6 text-gray-400 hover:text-white" />,
-      href: "https://github.com/nickXploit",
+      href: "https://github.com/aniltadvi20",
     },
     {
-      icon: <FaTwitter className="w-6 h-6 text-blue-400 hover:text-blue-300" />,
-      href: "https://x.com/Nick980076",
+      icon: <FaTwitter className="w-6 h-6 text-sky-400 hover:text-sky-300" />,
+      href: "https://x.com/AnilTadviSec",
     },
   ];
 
   return (
     <div className="relative w-full min-h-screen flex items-center bg-gradient-to-br from-gray-900 to-black text-gray-200">
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black text-gray-200 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black z-10"></div>
 
       {/* Hero Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Profile Image (on small devices first) */}
+
+        {/* Profile Image (mobile) */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="md:hidden flex justify-center items-center mb-6"
+          transition={{ duration: 0.6 }}
+          className="md:hidden flex justify-center mb-6"
         >
-          <div className="w-70 h-70 rounded-full overflow-hidden border-4 border-[#33FF33]">
+          <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-[#33FF33]">
             <img
               src={assets.Profile}
               alt="Anil Tadvi"
@@ -51,60 +52,52 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Text Content */}
+        {/* Text Section */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           className="space-y-6"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-[#33FF33]">
             Anil Tadvi
           </h1>
-          <p className="text-xl md:text-2xl mb-6">
-            Cybersecurity Professional | Red Teamer | Ethical Hacker
+
+          <p className="text-xl md:text-2xl text-gray-300">
+            Red Team · Web Application Security
           </p>
-          <p className="text-md mb-6">
-            Passionate about securing digital landscapes, breaking
-            vulnerabilities, and pushing the boundaries of cybersecurity.
+
+          <p className="text-md text-gray-400 max-w-xl">
+            Focused on identifying real-world vulnerabilities in modern web applications
+            through offensive security testing and bug bounty research.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/projects"
-              className="px-6 py-3 border border-[#33FF33] text-[#33FF33] 
-              hover:bg-[#33FF33] hover:text-[#0A192F] 
-              transition-all duration-300 rounded-lg 
+              className="px-6 py-3 border border-[#33FF33] text-[#33FF33]
+              hover:bg-[#33FF33] hover:text-[#0A192F]
+              transition-all duration-300 rounded-lg
               flex items-center space-x-2"
             >
               <FaRocket />
-              <span>View Projects</span>
+              <span>Projects</span>
             </Link>
+
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#33FF33] text-[#0A192F] 
-              hover:bg-opacity-80 
-              transition-all duration-300 rounded-lg 
-              flex items-center space-x-2"
+              className="px-6 py-3 bg-[#33FF33] text-[#0A192F]
+              hover:bg-opacity-80 transition-all duration-300
+              rounded-lg flex items-center space-x-2"
             >
               <FaShieldAlt />
-              <span>Hire Me</span>
+              <span>Contact</span>
             </Link>
-            <a
-              href="/path-to-your-resume.pdf" // Update this path to your resume file
-              download
-              className="px-6 py-3 bg-[#007BFF] text-white 
-              hover:bg-blue-600 
-              transition-all duration-300 rounded-lg 
-              flex items-center space-x-2"
-            >
-              <span>Download Resume</span>
-            </a>
           </div>
 
           {/* Social Links */}
-          <div className="flex space-x-4 mt-6">
+          <div className="flex space-x-5 pt-4">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
@@ -119,12 +112,12 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Profile Image (on larger devices) */}
+        {/* Profile Image (desktop) */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="hidden md:flex justify-center items-center"
+          transition={{ duration: 0.6 }}
+          className="hidden md:flex justify-center"
         >
           <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-[#33FF33]">
             <img
@@ -134,6 +127,7 @@ const HeroSection = () => {
             />
           </div>
         </motion.div>
+
       </div>
     </div>
   );
