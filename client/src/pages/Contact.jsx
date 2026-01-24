@@ -46,7 +46,7 @@ const Contact = () => {
     },
     {
       icon: <FaGithub />,
-      url: "https://github.com/InfinityCodder",
+      url: "https://github.com/aniltadvi20",
       color: "text-gray-500",
     },
     {
