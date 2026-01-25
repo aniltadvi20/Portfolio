@@ -51,6 +51,43 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Penetration Testing CTA */}
+      <div className="w-full py-16 bg-[#0A192F] text-gray-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-[#112240] border border-[#233554] rounded-xl p-8 text-center"
+          >
+            <FaShieldAlt className="text-[#33FF33] w-12 h-12 mx-auto mb-4" />
+
+            <h2 className="text-2xl md:text-3xl font-bold text-[#33FF33] mb-4">
+              Security Assessment & Penetration Testing
+            </h2>
+
+            <p className="text-gray-400 max-w-2xl mx-auto mb-6">
+              Professional web application security assessments focused on
+              identifying real-world vulnerabilities and improving overall
+              security posture.
+            </p>
+
+            <div className="text-sm text-gray-400 mb-6">
+              For legitimate and authorized security testing requests only.
+            </div>
+
+            <a
+              href="mailto:contact@aniltadvi.com"
+              className="inline-block px-6 py-3 border border-[#33FF33] text-[#33FF33]
+              hover:bg-[#33FF33] hover:text-[#0A192F]
+              transition-all duration-300 rounded-lg font-medium"
+            >
+              Request Security Assessment
+            </a>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Expertise Section */}
       <div className="w-full py-16 bg-gradient-to-br from-black to-gray-900 text-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,14 +130,13 @@ const Home = () => {
                   About Me
                 </h2>
                 <p className="mb-4">
-                  A passionate Cybersecurity Professional with a keen interest
-                  in offensive security, vulnerability research, and ethical
-                  hacking. OSCP Aspirant committed to pushing the boundaries of
-                  digital security.
+                  A cybersecurity professional focused on offensive security,
+                  vulnerability research, and real-world web application
+                  testing.
                 </p>
                 <div className="flex items-center space-x-4">
                   <FaCertificate className="text-yellow-500 w-8 h-8" />
-                  <span>OSCP Certification Journey</span>
+                  <span>Offensive Security Learning Path</span>
                 </div>
               </div>
               <div className="hidden md:block">
