@@ -9,7 +9,6 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Certifications from "./pages/Certifications";
-
 import Contact from "./pages/Contact";
 
 const App = () => {

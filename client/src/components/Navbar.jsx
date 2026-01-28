@@ -7,7 +7,6 @@ import {
   FaCode,
   FaLaptopCode,
   FaCertificate,
-
   FaUser,
   FaEnvelope,
   FaBars,
