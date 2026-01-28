@@ -7,7 +7,7 @@ import {
   FaCode,
   FaLaptopCode,
   FaCertificate,
-  FaPenNib,
+
   FaUser,
   FaEnvelope,
   FaBars,
@@ -37,13 +37,6 @@ const Navbar = () => {
       path: "/certifications",
       label: "Certifications",
       icon: <FaCertificate className="w-5 h-5" />,
-    },
-
-    // ✅ BLOG ADDED HERE
-    {
-      path: "/blog",
-      label: "Blog",
-      icon: <FaPenNib className="w-5 h-5" />,
     },
 
     {
