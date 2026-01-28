@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Certifications from "./pages/Certifications";
+import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
 const App = () => {
@@ -19,10 +20,14 @@ const App = () => {
       <main className="flex-grow pt-20 min-h-[calc(100vh-80px)]">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/certifications" element={<Certifications />} />
+
+          {/* ✅ BLOG ROUTE ADDED */}
+          <Route path="/blog" element={<Blog />} />
+
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
