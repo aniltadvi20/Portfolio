@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShieldAlt, FaCode, FaBug, FaCertificate } from "react-icons/fa";
+import { FaShieldAlt, FaCode, FaBug } from "react-icons/fa";
 import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
 
@@ -111,40 +111,6 @@ const Home = () => {
                 <p className="text-sm">{area.description}</p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* About Preview */}
-      <div className="w-full py-16 bg-gradient-to-br from-gray-900 to-black text-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="bg-[#112240] p-8 rounded-lg"
-          >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-[#33FF33] mb-4">
-                  About Me
-                </h2>
-                <p className="mb-4">
-                  A cybersecurity professional focused on offensive security,
-                  vulnerability research, and real-world web application
-                  testing.
-                </p>
-                <div className="flex items-center space-x-4">
-                  <FaCertificate className="text-yellow-500 w-8 h-8" />
-                  <span>Offensive Security Learning Path</span>
-                </div>
-              </div>
-              <div className="hidden md:block">
-                <div className="bg-[#0A192F] p-4 rounded-lg">
-                  <div className="h-64 w-full bg-gradient-to-br from-[#33FF33] to-[#0A192F] opacity-30 rounded-lg"></div>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
