@@ -7,9 +7,10 @@ import {
   FaDatabase,
   FaTerminal,
   FaTools,
-  FaCertificate,
+  FaServer,
+  FaProjectDiagram,
+  FaUsers,
 } from "react-icons/fa";
-import { SiKalilinux } from "react-icons/si";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -18,83 +19,270 @@ const Skills = () => {
     "All",
     "Programming",
     "Security Tools",
-    "Frameworks",
-    "Certifications",
+    "Security Domains",
+    "Frameworks & Stack",
+    "OS & Dev Tools",
+    "Methodologies",
+    "Soft Skills",
   ];
 
   const skills = [
-    // Programming Skills
+    // ======================
+    // Programming
+    // ======================
     {
       name: "Python",
       level: "Advanced",
       category: "Programming",
-      icon: <FaCode className="text-blue-500" />,
+      icon: <FaCode className="text-blue-400" />,
       proficiency: 90,
     },
     {
       name: "JavaScript",
       level: "Intermediate",
       category: "Programming",
-      icon: <FaCode className="text-yellow-500" />,
+      icon: <FaCode className="text-yellow-400" />,
       proficiency: 80,
     },
     {
       name: "Bash Scripting",
       level: "Advanced",
       category: "Programming",
-      icon: <FaTerminal className="text-green-500" />,
+      icon: <FaTerminal className="text-green-400" />,
       proficiency: 85,
     },
-    // Security Tools
     {
-      name: "Metasploit",
-      level: "Expert",
-      category: "Security Tools",
-      icon: <FaShieldAlt className="text-red-500" />,
-      proficiency: 95,
+      name: "Go",
+      level: "Intermediate",
+      category: "Programming",
+      icon: <FaCode className="text-cyan-400" />,
+      proficiency: 75,
     },
+    {
+      name: "PHP",
+      level: "Beginner",
+      category: "Programming",
+      icon: <FaCode className="text-purple-400" />,
+      proficiency: 60,
+    },
+
+    // ======================
+    // Security Tools
+    // ======================
     {
       name: "Burp Suite",
       level: "Advanced",
       category: "Security Tools",
-      icon: <FaTools className="text-purple-500" />,
+      icon: <FaTools className="text-pink-400" />,
       proficiency: 90,
     },
     {
       name: "Nmap",
       level: "Advanced",
       category: "Security Tools",
-      icon: <FaNetworkWired className="text-green-500" />,
-      proficiency: 85,
+      icon: <FaNetworkWired className="text-green-400" />,
+      proficiency: 88,
     },
-    // Frameworks
     {
-      name: "React",
+      name: "Metasploit",
       level: "Intermediate",
-      category: "Frameworks",
-      icon: <FaCode className="text-blue-400" />,
+      category: "Security Tools",
+      icon: <FaShieldAlt className="text-red-400" />,
       proficiency: 75,
     },
     {
-      name: "Node.js",
+      name: "Nuclei",
+      level: "Advanced",
+      category: "Security Tools",
+      icon: <FaShieldAlt className="text-orange-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "SQLmap",
       level: "Intermediate",
-      category: "Frameworks",
-      icon: <FaDatabase className="text-green-600" />,
+      category: "Security Tools",
+      icon: <FaDatabase className="text-blue-400" />,
       proficiency: 70,
     },
-    // Certifications
     {
-      name: "OSCP Preparation",
-      level: "In Progress",
-      category: "Certifications",
-      icon: <FaCertificate className="text-yellow-500" />,
-      proficiency: 60,
+      name: "Amass / Subfinder / Httpx",
+      level: "Advanced",
+      category: "Security Tools",
+      icon: <FaNetworkWired className="text-teal-400" />,
+      proficiency: 90,
     },
     {
-      name: "Kali Linux Certified",
-      level: "Certified",
-      category: "Certifications",
-      icon: <SiKalilinux className="text-blue-600" />,
+      name: "FFUF / Dirsearch / Gobuster",
+      level: "Advanced",
+      category: "Security Tools",
+      icon: <FaTools className="text-yellow-400" />,
+      proficiency: 85,
+    },
+
+    // ======================
+    // Security Domains
+    // ======================
+    {
+      name: "Web Application Security",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaShieldAlt className="text-green-400" />,
+      proficiency: 95,
+    },
+    {
+      name: "API Security",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaServer className="text-blue-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "Account Takeover (ATO)",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaShieldAlt className="text-red-400" />,
+      proficiency: 95,
+    },
+    {
+      name: "IDOR & Access Control",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaProjectDiagram className="text-purple-400" />,
+      proficiency: 92,
+    },
+    {
+      name: "Rate Limiting & Abuse",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaNetworkWired className="text-yellow-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "Business Logic Flaws",
+      level: "Advanced",
+      category: "Security Domains",
+      icon: <FaShieldAlt className="text-orange-400" />,
+      proficiency: 93,
+    },
+
+    // ======================
+    // Frameworks & Stack
+    // ======================
+    {
+      name: "React.js",
+      level: "Intermediate",
+      category: "Frameworks & Stack",
+      icon: <FaCode className="text-blue-400" />,
+      proficiency: 80,
+    },
+    {
+      name: "Node.js / Express",
+      level: "Intermediate",
+      category: "Frameworks & Stack",
+      icon: <FaServer className="text-green-400" />,
+      proficiency: 75,
+    },
+    {
+      name: "FastAPI",
+      level: "Intermediate",
+      category: "Frameworks & Stack",
+      icon: <FaServer className="text-teal-400" />,
+      proficiency: 75,
+    },
+    {
+      name: "PostgreSQL / SQLite",
+      level: "Intermediate",
+      category: "Frameworks & Stack",
+      icon: <FaDatabase className="text-purple-400" />,
+      proficiency: 70,
+    },
+
+    // ======================
+    // OS & Dev Tools
+    // ======================
+    {
+      name: "Linux",
+      level: "Advanced",
+      category: "OS & Dev Tools",
+      icon: <FaTerminal className="text-green-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "macOS",
+      level: "Advanced",
+      category: "OS & Dev Tools",
+      icon: <FaTerminal className="text-gray-300" />,
+      proficiency: 85,
+    },
+    {
+      name: "Git & GitHub",
+      level: "Advanced",
+      category: "OS & Dev Tools",
+      icon: <FaTools className="text-orange-400" />,
+      proficiency: 85,
+    },
+    {
+      name: "Docker (Basic)",
+      level: "Basic",
+      category: "OS & Dev Tools",
+      icon: <FaServer className="text-blue-400" />,
+      proficiency: 60,
+    },
+
+    // ======================
+    // Methodologies
+    // ======================
+    {
+      name: "OWASP Top 10",
+      level: "Advanced",
+      category: "Methodologies",
+      icon: <FaShieldAlt className="text-red-400" />,
+      proficiency: 95,
+    },
+    {
+      name: "OWASP API Top 10",
+      level: "Advanced",
+      category: "Methodologies",
+      icon: <FaShieldAlt className="text-orange-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "PTES",
+      level: "Strong",
+      category: "Methodologies",
+      icon: <FaProjectDiagram className="text-blue-400" />,
+      proficiency: 85,
+    },
+    {
+      name: "Threat Modeling",
+      level: "Strong",
+      category: "Methodologies",
+      icon: <FaProjectDiagram className="text-purple-400" />,
+      proficiency: 88,
+    },
+
+    // ======================
+    // Soft Skills
+    // ======================
+    {
+      name: "Analytical Thinking",
+      level: "Strong",
+      category: "Soft Skills",
+      icon: <FaUsers className="text-green-400" />,
+      proficiency: 90,
+    },
+    {
+      name: "Security Reporting & Documentation",
+      level: "Strong",
+      category: "Soft Skills",
+      icon: <FaUsers className="text-blue-400" />,
+      proficiency: 88,
+    },
+    {
+      name: "Remote Collaboration",
+      level: "Strong",
+      category: "Soft Skills",
+      icon: <FaUsers className="text-purple-400" />,
       proficiency: 85,
     },
   ];
@@ -106,31 +294,29 @@ const Skills = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-200 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page Header */}
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#33FF33]">
-            Technical Skills
+          <h1 className="text-4xl font-bold text-[#33FF33] mb-3">
+            Skills & Expertise
           </h1>
-          <p className="text-xl text-gray-400">
-            Expertise in Cybersecurity, Programming, and Offensive Technologies
+          <p className="text-gray-400">
+            Senior-level application security and engineering skillset
           </p>
         </motion.div>
 
-        {/* Skill Filters */}
-        <div className="flex justify-center mb-12 space-x-4 flex-wrap">
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {skillCategories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 m-1 rounded-lg transition-all duration-300 ${
+              className={`px-4 py-2 rounded-lg text-sm transition ${
                 activeCategory === category
-                  ? "bg-[#33FF33] text-[#0A192F]"
-                  : "border border-[#33FF33] text-[#33FF33] hover:bg-[#33FF33] hover:text-[#0A192F]"
+                  ? "bg-[#33FF33] text-black"
+                  : "border border-[#33FF33] text-[#33FF33] hover:bg-[#33FF33] hover:text-black"
               }`}
             >
               {category}
@@ -138,63 +324,30 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredSkills.map((skill, index) => (
             <motion.div
               key={index}
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: {
-                  y: 0,
-                  opacity: 1,
-                },
-              }}
-              className="bg-[#112240] rounded-lg p-6 
-              transform hover:scale-105 transition-transform duration-300 
-              hover:shadow-lg hover:shadow-[#33FF33]/20"
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#112240] p-6 rounded-xl shadow hover:shadow-[#33FF33]/20"
             >
-              <div className="flex justify-between items-center mb-4">
-                <div className="text-4xl">{skill.icon}</div>
-                <span className="text-sm text-[#33FF33]">{skill.level}</span>
+              <div className="flex justify-between items-center mb-3">
+                <div className="text-3xl">{skill.icon}</div>
+                <span className="text-[#33FF33] text-sm">{skill.level}</span>
               </div>
-              <h3 className="text-xl font-semibold text-[#33FF33] mb-2">
+              <h3 className="text-lg font-semibold text-[#33FF33]">
                 {skill.name}
               </h3>
 
-              {/* Skill Proficiency Bar */}
-              <div className="w-full bg-[#0A192F] rounded-full h-2.5 mt-4">
+              <div className="w-full bg-[#0A192F] rounded-full h-2 mt-4">
                 <div
-                  className="bg-[#33FF33] h-2.5 rounded-full"
+                  className="bg-[#33FF33] h-2 rounded-full"
                   style={{ width: `${skill.proficiency}%` }}
-                ></div>
+                />
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* No Skills Found */}
-        {filteredSkills.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-200">
-              No skills found in this category.
-            </p>
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );
