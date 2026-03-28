@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHome,
   FaCode,
-  FaLaptopCode,
   FaCertificate,
   FaUser,
   FaEnvelope,
@@ -26,11 +25,6 @@ const Navbar = () => {
       path: "/projects",
       label: "Projects",
       icon: <FaCode className="w-5 h-5" />,
-    },
-    {
-      path: "/skills",
-      label: "Skills",
-      icon: <FaLaptopCode className="w-5 h-5" />,
     },
     {
       path: "/certifications",
@@ -119,7 +113,6 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.7 }}
@@ -128,7 +121,6 @@ const Navbar = () => {
               onClick={toggleMenu}
             />
 
-            {/* Drawer */}
             <motion.div
               variants={mobileMenuVariants}
               initial="closed"
@@ -136,7 +128,6 @@ const Navbar = () => {
               exit="closed"
               className="fixed top-0 right-0 w-64 h-full bg-[#112240] shadow-lg z-50"
             >
-              {/* Close button */}
               <div className="absolute top-4 right-4">
                 <button
                   onClick={toggleMenu}
@@ -146,7 +137,6 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* Links */}
               <div className="px-4 pt-20 space-y-4">
                 {navLinks.map((link, index) => (
                   <motion.div
