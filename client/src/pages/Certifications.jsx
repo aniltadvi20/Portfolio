@@ -7,27 +7,13 @@ import {
   FaLink,
   FaShieldAlt,
   FaTimes,
-  FaCode,
-  FaTerminal,
-  FaTools,
 } from "react-icons/fa";
 
 const Certifications = () => {
   const [selectedCertification, setSelectedCertification] = useState(null);
 
   // ======================
-  // SKILLS
-  // ======================
-  const skills = [
-    { name: "Python", level: "Advanced", proficiency: 90 },
-    { name: "Burp Suite", level: "Advanced", proficiency: 90 },
-    { name: "Web App Security", level: "Advanced", proficiency: 95 },
-    { name: "Linux", level: "Advanced", proficiency: 90 },
-    { name: "OWASP Top 10", level: "Advanced", proficiency: 95 },
-  ];
-
-  // ======================
-  // CERTIFICATIONS (YOUR DATA)
+  // CERTIFICATIONS (UPDATED WITH SKILLS)
   // ======================
   const certifications = [
     {
@@ -45,6 +31,12 @@ const Certifications = () => {
         "Web application exploitation",
         "Real-world attack simulation",
       ],
+      skills: [
+        { name: "Buffer Overflow", level: "Advanced" },
+        { name: "Privilege Escalation", level: "Advanced" },
+        { name: "Active Directory", level: "Intermediate" },
+        { name: "Web Exploitation", level: "Advanced" },
+      ],
       verificationLink: "https://www.offensive-security.com/verify",
     },
     {
@@ -61,6 +53,12 @@ const Certifications = () => {
         "Understanding of offensive and defensive security concepts",
         "Structured approach to security learning",
         "Recognition of professional competency",
+      ],
+      skills: [
+        { name: "Red Teaming", level: "Advanced" },
+        { name: "Threat Modeling", level: "Intermediate" },
+        { name: "Security Training", level: "Advanced" },
+        { name: "Attack Techniques", level: "Advanced" },
       ],
       verificationLink:
         "https://courses.redteamleaders.com/exam-completion/2c70d277a29cc072",
@@ -80,6 +78,12 @@ const Certifications = () => {
         "Security ethics",
         "Security tools overview",
       ],
+      skills: [
+        { name: "Cybersecurity Basics", level: "Advanced" },
+        { name: "Network Security", level: "Intermediate" },
+        { name: "Security Ethics", level: "Advanced" },
+        { name: "Security Tools", level: "Intermediate" },
+      ],
       verificationLink:
         "https://coursera.org/share/a9182085a884e6daf4fccd1c10c138cb",
     },
@@ -89,37 +93,12 @@ const Certifications = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-200 py-16">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* ================= SKILLS ================= */}
-        <h1 className="text-4xl font-bold text-[#33FF33] mb-10 text-center">
-          Skills & Certifications
+        {/* ================= TITLE ================= */}
+        <h1 className="text-4xl font-bold text-[#33FF33] mb-12 text-center">
+          Professional Certifications
         </h1>
 
-        <h2 className="text-2xl font-semibold text-[#33FF33] mb-6">
-          Skills
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {skills.map((skill, i) => (
-            <div key={i} className="bg-[#112240] p-5 rounded-xl">
-              <div className="flex justify-between mb-2">
-                <span>{skill.name}</span>
-                <span>{skill.level}</span>
-              </div>
-              <div className="h-2 bg-black rounded">
-                <div
-                  className="bg-[#33FF33] h-2 rounded"
-                  style={{ width: `${skill.proficiency}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* ================= CERTIFICATIONS ================= */}
-        <h2 className="text-2xl font-semibold text-[#33FF33] mb-8">
-          Certifications
-        </h2>
-
         <div className="grid md:grid-cols-3 gap-6">
           {certifications.map((cert, i) => (
             <div
@@ -183,6 +162,7 @@ const Certifications = () => {
                   {selectedCertification.description}
                 </p>
 
+                {/* Highlights */}
                 <h4 className="text-lg font-semibold text-green-400 mb-3">
                   Key Highlights
                 </h4>
@@ -196,6 +176,27 @@ const Certifications = () => {
                   ))}
                 </ul>
 
+                {/* Skills */}
+                <h4 className="text-lg font-semibold text-green-400 mb-3">
+                  Skills Gained
+                </h4>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {selectedCertification.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className={`px-3 py-1 text-sm rounded-full ${
+                        skill.level === "Advanced"
+                          ? "bg-green-800 text-green-300"
+                          : "bg-yellow-800 text-yellow-300"
+                      }`}
+                    >
+                      {skill.name}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Verify */}
                 <a
                   href={selectedCertification.verificationLink}
                   target="_blank"
