@@ -85,15 +85,30 @@ const Certifications = () => {
   ];
 
   // ======================
-  // TOOLS
+  // TOOLS (FULL UPDATED)
   // ======================
   const tools = [
     "Burp Suite",
     "Nmap",
-    "Wireshark",
-    "Metasploit",
+    "Subfinder",
+    "Assetfinder",
+    "Amass",
+    "DNSx",
+    "HTTPx",
+    "FFUF",
+    "Nuclei",
+    "Dirsearch",
     "Gobuster",
+    "Wfuzz",
     "SQLMap",
+    "XSStrike",
+    "Commix",
+    "Wireshark",
+    "TCPDump",
+    "Metasploit",
+    "Postman",
+    "JWT Toolkit",
+    "Git",
   ];
 
   return (
@@ -144,9 +159,7 @@ const Certifications = () => {
           </button>
         </div>
 
-        {/* ================= CONTENT ================= */}
-
-        {/* CERTIFICATIONS */}
+        {/* ================= CERTIFICATIONS ================= */}
         {activeTab === "cert" && (
           <div className="grid md:grid-cols-3 gap-6">
             {certifications.map((cert, i) => (
@@ -163,7 +176,6 @@ const Certifications = () => {
                 </div>
 
                 <p className="text-gray-400 text-sm">{cert.issuer}</p>
-
                 <p className="text-gray-500 text-sm mt-2">
                   {cert.description}
                 </p>
@@ -180,7 +192,7 @@ const Certifications = () => {
           </div>
         )}
 
-        {/* SKILLS */}
+        {/* ================= SKILLS ================= */}
         {activeTab === "skills" && (
           <div className="flex flex-wrap gap-3 justify-center">
             {skills.map((skill, i) => (
@@ -194,16 +206,16 @@ const Certifications = () => {
           </div>
         )}
 
-        {/* TOOLS */}
+        {/* ================= TOOLS (UPDATED UI) ================= */}
         {activeTab === "tools" && (
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {tools.map((tool, i) => (
-              <span
+              <div
                 key={i}
-                className="bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                className="bg-[#112240] p-4 rounded-lg text-center hover:scale-105 transition border border-green-500/20 hover:border-green-400"
               >
-                {tool}
-              </span>
+                <p className="text-blue-300 font-medium">{tool}</p>
+              </div>
             ))}
           </div>
         )}
