@@ -95,6 +95,7 @@ const Certifications = () => {
     "Amass",
     "DNSx",
     "HTTPx",
+    "Naabu",
     "FFUF",
     "Nuclei",
     "Dirsearch",
@@ -121,7 +122,7 @@ const Certifications = () => {
         </h1>
 
         {/* ================= TABS ================= */}
-        <div className="flex justify-center gap-4 mb-10">
+        <div className="flex justify-center gap-4 mb-10 flex-wrap">
           <button
             onClick={() => setActiveTab("cert")}
             className={`px-5 py-2 rounded-lg border ${
@@ -206,15 +207,21 @@ const Certifications = () => {
           </div>
         )}
 
-        {/* ================= TOOLS (UPDATED UI) ================= */}
+        {/* ================= TOOLS ================= */}
         {activeTab === "tools" && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {tools.map((tool, i) => (
               <div
                 key={i}
-                className="bg-[#112240] p-4 rounded-lg text-center hover:scale-105 transition border border-green-500/20 hover:border-green-400"
+                className="bg-[#112240] p-4 rounded-xl text-center 
+                transition transform hover:scale-105 
+                border border-green-500/20 
+                hover:border-green-400 
+                hover:shadow-md hover:shadow-green-500/20"
               >
-                <p className="text-blue-300 font-medium">{tool}</p>
+                <p className="text-blue-300 font-semibold text-sm">
+                  {tool}
+                </p>
               </div>
             ))}
           </div>
