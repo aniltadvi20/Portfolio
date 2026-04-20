@@ -7,9 +7,13 @@ import {
   FaLinkedin,
   FaGithub,
   FaTwitter,
+  FaCopy,
+  FaCheck,
 } from "react-icons/fa";
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,6 +39,16 @@ const Contact = () => {
       subject: "",
       message: "",
     });
+  };
+
+  // 🔥 COPY FUNCTION
+  const copyEmail = () => {
+    navigator.clipboard.writeText("contact@aniltadvi.com");
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
   };
 
   const socialLinks = [
@@ -98,6 +112,7 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* 🔥 UPDATED EMAIL BLOCK */}
               <div className="flex items-start space-x-4">
                 <FaEnvelope className="text-green-500 text-2xl mt-1" />
                 <div>
@@ -105,9 +120,20 @@ const Contact = () => {
                   <p className="text-gray-200">
                     For responsible disclosure or collaboration:
                   </p>
-                  <p className="text-[#33FF33] mt-1 font-medium">
-                    contact@aniltadvi.com
-                  </p>
+
+                  <div className="flex items-center gap-2 mt-1">
+                    <p className="text-[#33FF33] font-medium">
+                      contact@aniltadvi.com
+                    </p>
+
+                    <button
+                      onClick={copyEmail}
+                      className="text-[#33FF33] hover:scale-110 transition"
+                      title="Copy email"
+                    >
+                      {copied ? <FaCheck /> : <FaCopy />}
+                    </button>
+                  </div>
                 </div>
               </div>
 
