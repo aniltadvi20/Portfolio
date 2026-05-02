@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaGithub,
   FaTwitter,
+  FaDownload,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -38,38 +39,54 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
+          {/* Name */}
           <h1 className="text-4xl md:text-6xl font-bold text-[#33FF33]">
             Anil Tadvi
           </h1>
 
+          {/* Updated Headline */}
           <p className="text-xl md:text-2xl text-gray-300">
-            Red Team · Web Application Security
+            Offensive Security Researcher | Bug Bounty Hunter
           </p>
 
+          {/* Description */}
           <p className="text-md text-gray-400 max-w-2xl leading-relaxed">
-            Focused on identifying real-world vulnerabilities in modern web
-            applications through offensive security testing and bug bounty
-            research.
+            Identifying real-world vulnerabilities in modern web applications
+            through offensive security testing and bug bounty research.
           </p>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
+            {/* Primary */}
             <Link
               to="/projects"
-              className="px-6 py-3 border border-[#33FF33] text-[#33FF33]
-              hover:bg-[#33FF33] hover:text-[#0A192F]
-              transition-all duration-300 rounded-lg
+              className="px-6 py-3 bg-[#33FF33] text-[#0A192F]
+              hover:bg-opacity-80 transition-all duration-300 rounded-lg
               flex items-center space-x-2"
             >
               <FaRocket />
               <span>Projects</span>
             </Link>
 
+            {/* Resume Button (NEW) */}
+            <a
+              href="/Anil_Tadvi_Offensive_Security_Resume.pdf"
+              download
+              className="px-6 py-3 border border-[#33FF33] text-[#33FF33]
+              hover:bg-[#33FF33] hover:text-[#0A192F]
+              transition-all duration-300 rounded-lg
+              flex items-center space-x-2"
+            >
+              <FaDownload />
+              <span>Download Resume</span>
+            </a>
+
+            {/* Secondary */}
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#33FF33] text-[#0A192F]
-              hover:bg-opacity-80 transition-all duration-300
-              rounded-lg flex items-center space-x-2"
+              className="px-6 py-3 text-gray-300 hover:text-white
+              transition-all duration-300 rounded-lg
+              flex items-center space-x-2"
             >
               <FaShieldAlt />
               <span>Contact</span>
