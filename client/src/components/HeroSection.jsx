@@ -40,11 +40,11 @@ const HeroSection = () => {
           className="space-y-6"
         >
           {/* Name */}
-          <h1 className="text-4xl md:text-6xl font-bold text-[#33FF33]">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#33FF33] drop-shadow-[0_0_10px_#33FF33]">
             Anil Tadvi
           </h1>
 
-          {/* Updated Headline */}
+          {/* Headline */}
           <p className="text-xl md:text-2xl text-gray-300">
             Offensive Security Researcher | Bug Bounty Hunter
           </p>
@@ -55,20 +55,21 @@ const HeroSection = () => {
             through offensive security testing and bug bounty research.
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-5 mt-2">
+            
             {/* Primary */}
             <Link
               to="/projects"
               className="px-6 py-3 bg-[#33FF33] text-[#0A192F]
               hover:bg-opacity-80 transition-all duration-300 rounded-lg
-              flex items-center space-x-2"
+              flex items-center space-x-2 shadow-md"
             >
               <FaRocket />
               <span>Projects</span>
             </Link>
 
-            {/* Resume Button (NEW) */}
+            {/* Secondary */}
             <a
               href="/Anil_Tadvi_Offensive_Security_Resume.pdf"
               download
@@ -81,10 +82,11 @@ const HeroSection = () => {
               <span>Download Resume</span>
             </a>
 
-            {/* Secondary */}
+            {/* Tertiary (FIXED) */}
             <Link
               to="/contact"
-              className="px-6 py-3 text-gray-300 hover:text-white
+              className="px-6 py-3 border border-gray-500 text-gray-300
+              hover:border-white hover:text-white
               transition-all duration-300 rounded-lg
               flex items-center space-x-2"
             >
