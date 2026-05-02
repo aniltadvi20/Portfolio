@@ -63,7 +63,7 @@ const HeroSection = () => {
               to="/projects"
               className="px-6 py-3 bg-[#33FF33] text-[#0A192F]
               hover:bg-opacity-80 transition-all duration-300 rounded-lg
-              flex items-center space-x-2 shadow-md"
+              flex items-center space-x-2 shadow-[0_0_10px_#33FF33]"
             >
               <FaRocket />
               <span>Projects</span>
@@ -82,13 +82,13 @@ const HeroSection = () => {
               <span>Download Resume</span>
             </a>
 
-            {/* Tertiary (FIXED) */}
+            {/* Tertiary (FIXED + GLOW) */}
             <Link
               to="/contact"
-              className="px-6 py-3 border border-gray-500 text-gray-300
-              hover:border-white hover:text-white
+              className="px-6 py-3 border border-[#33FF33] text-[#33FF33]
+              hover:bg-[#33FF33] hover:text-[#0A192F]
               transition-all duration-300 rounded-lg
-              flex items-center space-x-2"
+              flex items-center space-x-2 shadow-[0_0_8px_#33FF33]"
             >
               <FaShieldAlt />
               <span>Contact</span>
