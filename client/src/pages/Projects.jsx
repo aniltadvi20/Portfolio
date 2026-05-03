@@ -19,14 +19,4 @@ const projects = [
     liveLink: "#",
     icon: <FaShieldVirus className="text-red-500" />,
   },
-  {
-    title: "Bug Bounty Findings & Writeups",
-    description:
-      "Collection of real-world vulnerability reports and writeups demonstrating practical exploitation techniques.",
-    technologies: ["Web Security", "Bug Bounty", "Research"],
-    category: "Offensive Security",
-    githubLink: "#",
-    liveLink: "#",
-    icon: <FaBug className="text-green-500" />,
-  },
-];
+  
